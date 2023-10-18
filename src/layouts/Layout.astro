@@ -1,28 +1,18 @@
 ---
-import Card from "./../components/Card/Card.astro";
-import Layout from "./../layouts/Layout.astro";
+const { title } = Astro.props
 ---
-
-<Layout title="Sorpresa 💙">
-  <div class="main-app--gift-image-container">
-    <img
-      class="main-app--gift-image"
-      src="/opened-gift-box.png"
-      alt="Una caja de regalos abierta"
-    />
-  </div>
-  <div class="main-app--gift-presentation-container">
-    <h1>
-      Descubre tu <span class="gift-presentation--title-highlighted">sorpresa</span>
-    </h1>
-    <p class="gift-presentation--paragraph">
-      Hola cariño, espero haberte sacado una sonrisa 🥰. Disfruta mucho de la
-      sorpresa porque te lo mereces. Eres el amor de mi vida y mi angelito tenía
-      que tener otra sorpresa más por su santo. Te amo muchísimo pequeñaja! 😍💙
-    </p>
-    <a class="navigation-item" href="/clues/">¿Vamos?</a>
-  </div>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sorpresa amor 💙</title>
+  </head>
+  <body>
+    <main class="main-app">
+      <slot />
+    </main>
+  </body>
+</html>
 
 <style is:global>
   :root {
