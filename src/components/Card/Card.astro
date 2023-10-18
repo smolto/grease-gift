@@ -1,19 +1,24 @@
 ---
-const { title } = Astro.props;
+interface Props {
+  image: {
+    url: string;
+    alt: string;
+  };
+  message: string;
+}
+const { message, image } = Astro.props;
 ---
 
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img
-        src="https://i.pinimg.com/originals/a4/7b/a5/a47ba59b4a353e0928ef0551ca44f980.jpg"
-        alt="Avatar"
-      />
+      <h2>{message}</h2>
     </div>
     <div class="flip-card-back">
-      <h1>John Doe</h1>
-      <p>Architect & Engineer</p>
-      <p>We love that guy</p>
+      <img
+        src={image.url}
+        alt={image.alt}
+      />
     </div>
   </div>
 </div>
@@ -23,7 +28,6 @@ const { title } = Astro.props;
     background-color: transparent;
     width: 300px;
     height: 200px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
 
@@ -54,12 +58,13 @@ const { title } = Astro.props;
 
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    background-color: #bbb;
+    background-color: var(--color-primary);
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    flex-direction: column;
   }
 
   .flip-card-front img{
@@ -75,5 +80,17 @@ const { title } = Astro.props;
     background-color: dodgerblue;
     color: white;
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .flip-card-back img{
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 </style>
