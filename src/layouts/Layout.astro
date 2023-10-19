@@ -16,10 +16,10 @@ const { title } = Astro.props
 
 <style is:global>
   :root {
-    --color-primary: #ee5754;
-    --color-primary-darken: #b01511;
+    --color-primary: #fb0f85;
+    --color-primary-darken: #fd6fb6;
     --color-secondary: #e8e7e6;
-    --color-secondary-darken: ##8f8b86;
+    --color-secondary-darken: #8f8b86;
     --color-black: #000000;
     --color-white: #ffffff;
     --gap-default: 1rem;
@@ -51,68 +51,8 @@ const { title } = Astro.props
     gap: var(--gap-default);
   }
 
-  .welcome-user-name {
-    color: var(--color-primary);
-    font-weight: bold;
-  }
-
-  .main-app--gift-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-app--gift-image {
-    width: 300px;
-  }
-
-  .main-app--gift-presentation-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 var(--gap-default);
-  }
-
-  .gift-presentation--title-highlighted {
-    color: var(--color-primary);
-    font-weight: 900;
-  }
-
-  .navigation-item {
-    height: 45px;
-    width: 150px;
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    color: var(--color-secondary);
-    border-radius: 7px;
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  }
-
-  .main-button:hover {
-    box-shadow: inset 150px 0 0 0 var(--color-primary-darken);
-    border: 1px solid var(--color-primary-darken);
-    color: var(--color-white);
-  }
-
-  .gift-presentation--paragraph {
-    text-align: justify;
-    text-justify: inter-word;
-  }
 
   @media (width >= 768px) {
-    .main-app--gift-image {
-      width: 700px;
-    }
-
     .main-app {
       flex-direction: row;
     }

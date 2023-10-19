@@ -54,12 +54,13 @@ const { message, image } = Astro.props;
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    border-radius: 7px;
   }
 
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
     background-color: var(--color-primary);
-    color: black;
+    color: var(--color-white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,20 +78,20 @@ const { message, image } = Astro.props;
 
   /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
+    background-color: var(--color-white);
     color: white;
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
   }
 
   .flip-card-back img{
-    width: 100%;
+    width: 80%;
     height: auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    object-fit: contain;
   }
 </style>

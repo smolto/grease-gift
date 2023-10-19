@@ -1,10 +1,14 @@
 ---
 import Layout from "./../layouts/Layout.astro";
 import Card from "./../components/Card/Card.astro"
+import ProgressBar from "./../components/ProgressBar/ProgressBar.tsx"
 ---
 
 <Layout title="Sorpresa 💙">
   <div>
-    <Card image={{alt: "Gafas", url: "/clues/clue_1.png"}} message="Pista 1 "/>
+    <ProgressBar client:visible />
   </div>
 </Layout>
+
+<!-- <Card image={{alt: "Bandera", url: "/clues/clue_2.png"}} message="Pista 2"/>
+<Card image={{alt: "Microfono", url: "/clues/clue_3.png"}} message="Pista 3"/> -->
