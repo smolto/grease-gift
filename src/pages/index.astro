@@ -1,77 +1,31 @@
 ---
-import Card from "./../components/Card/Card.astro";
+import Layout from "./../layouts/Layout.astro";
+import Breadcrumbs from "./../components/Breadcrumbs/Breadcrumbs.astro"
+const pages = [{name: 'Inicio', url: '/'}]
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <main class="main-app">
-      <div class="main-app--gift-image-container">
-        <img
-          class="main-app--gift-image"
-          src="/opened-gift-box.png"
-          alt="Una caja de regalos abierta"
-        />
-      </div>
-      <div class="main-app--gift-presentation-container">
-        <h1>
-          Descubre tu <span class="gift-presentation--title-highlighted"
-            >sorpresa</span>
-        </h1>
-        <p class="gift-presentation--paragraph">
-          Hola cariño, espero haberte sacado una sonrisa 🥰. Disfruta mucho de
-          la sorpresa porque te lo mereces. Eres el amor de mi vida y mi
-          angelito tenía que tener otra sorpresa más por su santo. Te amo
-          muchísimo pequeñaja! 😍💙
-        </p>
-        <button class="main-button">¿Vamos?</button>
-      </div>
-    </main>
-  </body>
-</html>
+<Layout title="Sorpresa 💙">
+  <div class="main-app--gift-image-container">
+    <img
+      class="main-app--gift-image"
+      src="/opened-gift-box.png"
+      alt="Una caja de regalos abierta"
+    />
+  </div>
+  <div class="main-app--gift-presentation-container">
+    <h1>
+      Descubre tu <span class="gift-presentation--title-highlighted">sorpresa</span>
+    </h1>
+    <p class="gift-presentation--paragraph">
+      Hola cariño, espero haberte sacado una sonrisa 🥰. Disfruta mucho de la
+      sorpresa porque te lo mereces. Eres el amor de mi vida y mi angelito tenía
+      que tener otra sorpresa más por su santo. Te amo muchísimo pequeñaja! 😍💙
+    </p>
+    <a class="navigation-item" href="/clues/">¿Vamos?</a>
+  </div>
+</Layout>
 
-<style is:global>
-  :root {
-    --color-primary: #ee5754;
-    --color-primary-darken: #b01511;
-    --color-secondary: #e8e7e6;
-    --color-secondary-darken: ##8f8b86;
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --gap-default: 1rem;
-    --gap-extended: 2rem;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-secondary);
-  }
-
-  h1 {
-    padding: 0;
-    margin: 0;
-  }
-
-  .main-app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    gap: var(--gap-default);
-  }
+<style>
 
   .welcome-user-name {
     color: var(--color-primary);
@@ -99,7 +53,7 @@ import Card from "./../components/Card/Card.astro";
     font-weight: 900;
   }
 
-  .main-button {
+  .navigation-item {
     height: 45px;
     width: 150px;
     background-color: var(--color-primary);
@@ -113,9 +67,13 @@ import Card from "./../components/Card/Card.astro";
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
 
-  .main-button:hover {
+  .navigation-item:hover {
     box-shadow: inset 150px 0 0 0 var(--color-primary-darken);
     border: 1px solid var(--color-primary-darken);
     color: var(--color-white);

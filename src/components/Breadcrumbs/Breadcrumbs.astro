@@ -1,0 +1,40 @@
+---
+interface Props {
+  pages: Array<{ name: string; url: string }>;
+  currentPage: string;
+}
+const { pages, currentPage } = Astro.props;
+---
+
+<section class="breadcrumb-container">
+  {
+    pages.map((page) => {
+      if (page.name !== currentPage) {
+        return <Fragment><a class="breadcrumb--link" href={page.url}>{page.name}</a> /</Fragment>;
+      }
+      return <p class="breadcrumb--page">{page.name} </p>;
+    })
+  }
+</section>
+
+<style>
+  .breadcrumb-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb--link {
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .breadcrumb--page {
+    color: var(--color-black);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+</style>
