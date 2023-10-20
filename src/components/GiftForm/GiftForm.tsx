@@ -50,7 +50,7 @@ export default function GiftForm() {
       {
         isSuccess && (
           <div className='success-container'>
-            <h2>Lo has adividano! 🥳</h2>
+            <h2>Lo has adivinado! 🥳</h2>
             <div className='success-container--image-container'>
               <img src='/gift.png' width={200} />
             </div>
