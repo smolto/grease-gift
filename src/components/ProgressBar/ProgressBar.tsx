@@ -63,7 +63,9 @@ export default function ProgressHandler() {
       <CardManager step={step} clickCard={clickCard} unclickCard={unclickCard}/>
       <div className="progress-bar--buttons-container">
         <button className="progress-bar--button" onClick={decrease}>←</button>
-        <button className="progress-bar--button" onClick={increase}>→</button>
+        {
+          step === 3 ? <a href='/guess' className="progress-bar--button">¿Lo sabes?</a> : <button className="progress-bar--button" onClick={increase}>→</button>
+        }
       </div>
     </div>
   )
