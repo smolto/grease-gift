@@ -1,11 +1,13 @@
 ---
 import Layout from "./../layouts/Layout.astro";
-import Card from "./../components/Card/Card.astro"
 import ProgressBar from "./../components/ProgressBar/ProgressBar.tsx"
+import Breadcrumbs from "./../components/Breadcrumbs/Breadcrumbs.astro"
+const pages = [{name: 'Incio', url: '/'}, {name: 'Pistas', url: '/clues'}]
 ---
 
 <Layout title="Sorpresa 💙">
   <div>
+    <Breadcrumbs currentPage="Pistas" pages={pages}/>
     <ProgressBar client:visible />
   </div>
 </Layout>
