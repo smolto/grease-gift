@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './GiftForm.css'
+import JSConfetti from 'js-confetti'
 
 const correctOption = 'grease'
 
@@ -19,6 +20,14 @@ export default function GiftForm() {
       return
     }
   }
+
+  useEffect(() => {
+    if(!isSuccess) return;
+    
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti()
+
+  }, [isSuccess])
 
   return (
     <>
