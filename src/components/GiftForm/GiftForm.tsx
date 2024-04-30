@@ -3,7 +3,7 @@ import './GiftForm.css'
 import JSConfetti from 'js-confetti'
 import Spinner from '../Spinner/Spinner'
 
-const correctOption = 'grease'
+const correctOption = 'aladdin'
 
 export default function GiftForm() {
   const [value, setValue] = useState('')
@@ -40,7 +40,12 @@ export default function GiftForm() {
     <>
       <h3 className='gift-form--title'>¿Qué será? 🤭</h3>
       <form className='gift-form' onSubmit={handleSubmit}>
-        <input type="text" className='gift-form--input' onChange={(e) => setValue(e.target.value)} value={value} />
+        <input type="text" className='gift-form--input' onChange={(e) => {
+          if(!value) {
+            setIsSuccess(undefined)
+          }
+          setValue(e.target.value)
+          }} value={value} />
         <button className='gift-form--button' disabled={isSuccess || !value}>
           {
             isChecking ? <Spinner /> : <>Probar</>
